@@ -1,0 +1,240 @@
+aid: linea-network
+url: https://raw.githubusercontent.com/api-evangelist/linea-network/refs/heads/main/apis.yml
+name: Linea
+kind: company
+description: >-
+  Linea is an Ethereum zkEVM Layer 2 developed by Consensys, offering full
+  Ethereum equivalence under a zero-knowledge proving system that finalizes
+  state to Ethereum L1. Linea mainnet runs at chain ID 59144 with public
+  JSON-RPC at rpc.linea.build, and a Sepolia testnet at chain ID 59141 at
+  rpc.sepolia.linea.build. Developer surfaces include Linea-specific JSON-RPC
+  extensions (linea_estimateGas, linea_getProof), the Linea SDK, the canonical
+  Linea Bridge, Lineascan block explorer, the Linea POH/attestation system, and
+  a published Linea Stack for deploying Linea-equivalent chains.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Blockchain
+  - Layer 2
+  - Ethereum
+  - zkEVM
+  - EVM Equivalence
+  - JSON-RPC
+  - Consensys
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - aid: linea-network:mainnet-rpc
+    name: Linea Mainnet JSON-RPC
+    description: >-
+      Public Ethereum-compatible JSON-RPC endpoint for Linea mainnet (chain ID
+      59144). Supports the standard eth_* method set plus Linea-specific
+      extensions such as linea_estimateGas and linea_getProof.
+    humanURL: https://docs.linea.build/get-started/build/network-info
+    baseURL: https://rpc.linea.build
+    tags:
+      - JSON-RPC
+      - Mainnet
+      - zkEVM
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/get-started/build/network-info
+      - type: APIReference
+        url: https://docs.linea.build/api
+  - aid: linea-network:sepolia-rpc
+    name: Linea Sepolia Testnet JSON-RPC
+    description: >-
+      Public JSON-RPC endpoint for the Linea Sepolia testnet (chain ID 59141),
+      used for application development, prover-changes testing, and bridge
+      integration before deploying to mainnet.
+    humanURL: https://docs.linea.build/get-started/build/network-info
+    baseURL: https://rpc.sepolia.linea.build
+    tags:
+      - JSON-RPC
+      - Testnet
+      - Sepolia
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/get-started/build/network-info
+      - type: APIReference
+        url: https://docs.linea.build/api
+  - aid: linea-network:linea-rpc-methods
+    name: Linea-Specific JSON-RPC Methods
+    description: >-
+      Linea custom JSON-RPC methods including linea_estimateGas (returns
+      recommended gas limit, base fee, and priority fee accounting for L1
+      verification costs) and linea_getProof. Documented in the Linea API
+      reference.
+    humanURL: https://docs.linea.build/api
+    baseURL: https://docs.linea.build/api
+    tags:
+      - JSON-RPC
+      - Linea
+      - Custom Methods
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/api
+      - type: APIReference
+        url: https://docs.linea.build/api/reference/linea-estimategas
+  - aid: linea-network:linea-sdk
+    name: Linea SDK
+    description: >-
+      Official TypeScript SDK for interacting with Linea — message-service
+      helpers, bridge claim flows, and L1/L2 utility methods used by app
+      developers and bridge integrators.
+    humanURL: https://docs.linea.build/api/linea-sdk
+    baseURL: https://github.com/Consensys/linea-sdk
+    tags:
+      - SDK
+      - TypeScript
+      - Bridge
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/api/linea-sdk
+      - type: Repository
+        url: https://github.com/Consensys/linea-sdk
+      - type: Package
+        url: https://www.npmjs.com/package/@consensys/linea-sdk
+  - aid: linea-network:bridge
+    name: Linea Bridge
+    description: >-
+      Canonical Ethereum-Linea bridge for ETH and supported ERC-20 tokens,
+      built on Linea's message service. UI lives at bridge.linea.build.
+    humanURL: https://docs.linea.build/get-started/concepts/bridges
+    baseURL: https://bridge.linea.build
+    tags:
+      - Bridge
+      - Ethereum
+      - Message Service
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/get-started/concepts/bridges
+  - aid: linea-network:lineascan-explorer
+    name: Lineascan Block Explorer
+    description: >-
+      Etherscan-style block explorer for Linea mainnet — transactions, blocks,
+      contracts, tokens, batches, and Solidity source verification.
+    humanURL: https://lineascan.build
+    baseURL: https://lineascan.build
+    tags:
+      - Explorer
+      - Lineascan
+      - Mainnet
+    properties:
+      - type: Documentation
+        url: https://lineascan.build
+  - aid: linea-network:lineascan-sepolia-explorer
+    name: Lineascan Sepolia Testnet Explorer
+    description: >-
+      Lineascan instance for the Linea Sepolia testnet, supporting transaction
+      lookup and contract verification for testnet deployments.
+    humanURL: https://sepolia.lineascan.build
+    baseURL: https://sepolia.lineascan.build
+    tags:
+      - Explorer
+      - Sepolia
+      - Testnet
+    properties:
+      - type: Documentation
+        url: https://sepolia.lineascan.build
+  - aid: linea-network:linea-stack
+    name: Linea Stack
+    description: >-
+      Linea Stack lets infra teams deploy and operate their own
+      Ethereum-equivalent network using the Linea protocol — sequencer, prover,
+      and message-service components.
+    humanURL: https://docs.linea.build/stack
+    baseURL: https://docs.linea.build/stack
+    tags:
+      - Stack
+      - Rollup
+      - Infrastructure
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/stack
+  - aid: linea-network:linea-poh
+    name: Linea Proof of Humanity
+    description: >-
+      Linea POH (Proof of Humanity) attestation system used by ecosystem dApps
+      for sybil-resistant identity, queried by contract or via attestation
+      services.
+    humanURL: https://docs.linea.build/get-started/tooling/proof-of-humanity
+    baseURL: https://poh.linea.build
+    tags:
+      - POH
+      - Attestation
+      - Identity
+    properties:
+      - type: Documentation
+        url: https://docs.linea.build/get-started/tooling/proof-of-humanity
+  - aid: linea-network:ecosystem
+    name: Linea Ecosystem Directory
+    description: >-
+      Public directory of dApps, infrastructure providers, wallets, indexers,
+      and services building on Linea — surfaces partner integrations developers
+      can plug into.
+    humanURL: https://linea.build/apps
+    baseURL: https://linea.build/apps
+    tags:
+      - Ecosystem
+      - Directory
+      - dApps
+    properties:
+      - type: Documentation
+        url: https://linea.build/apps
+common:
+  - type: Website
+    url: https://linea.build
+  - type: Documentation
+    url: https://docs.linea.build
+  - type: GettingStarted
+    url: https://docs.linea.build/get-started
+  - type: APIReference
+    url: https://docs.linea.build/api
+  - type: Bridge
+    url: https://bridge.linea.build
+  - type: Explorer
+    url: https://lineascan.build
+  - type: TestnetExplorer
+    url: https://sepolia.lineascan.build
+  - type: GitHub
+    url: https://github.com/Consensys/linea-monorepo
+  - type: DocsRepository
+    url: https://github.com/Consensys/doc.linea
+  - type: Support
+    url: https://support.linea.build
+  - type: Forum
+    url: https://community.linea.build
+  - type: Apps
+    url: https://linea.build/apps
+  - type: Blog
+    url: https://linea.build/blog
+  - type: Twitter
+    url: https://x.com/LineaBuild
+  - type: Discord
+    url: https://discord.gg/linea
+  - type: Status
+    url: https://linea.statuspage.io
+  - type: PrivacyPolicy
+    url: https://linea.build/privacy-notice
+  - type: TermsOfService
+    url: https://linea.build/terms-of-service
+integrations:
+  - name: Ethereum
+  - name: MetaMask
+  - name: Infura
+  - name: QuickNode
+  - name: Alchemy
+  - name: Chainstack
+  - name: BlockPI
+  - name: dRPC
+  - name: The Graph
+  - name: Goldsky
+  - name: Envio
+  - name: LayerZero
+  - name: Wormhole
+  - name: Chainlink
+  - name: Pyth
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
