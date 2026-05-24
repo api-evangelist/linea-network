@@ -219,6 +219,8 @@ common:
     url: https://linea.build/privacy-notice
   - type: TermsOfService
     url: https://linea.build/terms-of-service
+  - type: LLMsTxt
+    url: https://docs.linea.build/llms.txt
 integrations:
   - name: Ethereum
   - name: MetaMask
