@@ -11,7 +11,7 @@ description: >-
   extensions (linea_estimateGas, linea_getProof), the Linea SDK, the canonical
   Linea Bridge, Lineascan block explorer, the Linea POH/attestation system, and
   a published Linea Stack for deploying Linea-equivalent chains.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Blockchain
   - Layer 2
