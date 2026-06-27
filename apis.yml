@@ -203,7 +203,7 @@ common:
     url: https://github.com/Consensys/doc.linea
   - type: Support
     url: https://support.linea.build
-  - type: Forum
+  - type: Forums
     url: https://community.linea.build
   - type: Apps
     url: https://linea.build/apps
@@ -219,7 +219,7 @@ common:
     url: https://linea.build/privacy-notice
   - type: TermsOfService
     url: https://linea.build/terms-of-service
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.linea.build/llms.txt
 integrations:
   - name: Ethereum
