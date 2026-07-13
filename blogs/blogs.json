@@ -2,13 +2,11 @@
   "repo": "linea-network",
   "feeds": [
     {
-      "source": "https://linea.build/blog",
-      "feed_url": "",
-      "saved": 0,
-      "method": "agent-scrape"
+      "source": "https://linea.build/apps",
+      "error": "HTTPError"
     }
   ],
   "post_count": 1,
-  "fetched": "2026-06-27T12:51:54Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "agent_pulled": "2026-06-27"
 }
