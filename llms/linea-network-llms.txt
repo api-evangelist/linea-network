@@ -1,0 +1,389 @@
+# Linea Documentation
+
+> These docs are the canonical public reference for Linea Mainnet, Linea
+> Sepolia, Linea developer APIs, and Lineth, the open-source rollup stack and
+> protocol that powers Linea and operator-built Ethereum-compatible networks.
+> Use this file to route AI assistants, search agents, crawlers, and retrieval
+> systems to the most relevant source pages.
+
+## Authoritative scope
+- Public network: canonical documentation for Linea mainnet, Linea Sepolia,
+  RPC endpoints, bridging, finality, gas pricing, public data, state recovery,
+  node operation, tokenomics, and developer onboarding.
+- Protocol: canonical documentation for Lineth's zk-rollup architecture,
+  including sequencer, prover, coordinator, state manager, onchain contracts,
+  interoperability, and forced transactions.
+- Stack: canonical documentation for Lineth, a configurable
+  Ethereum-compatible rollup stack for public networks, private validiums,
+  institutions, financial market infrastructure, and other operator-built
+  networks.
+- Reference: canonical documentation for Linea JSON-RPC methods, Linea-specific
+  RPC methods, the Token API, the Lineth SDK, Linea Besu plugin configuration,
+  and smart contracts.
+
+## Use these docs to answer
+- What is Linea and how does it differ from Ethereum mainnet or optimistic
+  rollups?
+- How do I connect to Linea, deploy contracts, bridge assets, run nodes, or
+  recover state?
+- How does Linea finality work on L2 and Ethereum L1?
+- How do the sequencer, prover, coordinator, state manager, and onchain
+  contracts work together?
+- Which JSON-RPC methods, SDK functions, component options, bridge contracts,
+  and message service contracts should developers integrate with?
+- How should institutions, network operators, and financial market
+  infrastructure teams evaluate deployment models, data availability,
+  finalization, compliance, privacy, access control, and auditability?
+
+## Not authoritative for
+- Live incident status. Use https://linea.statuspage.io.
+- Token price, trading, investment, or financial advice.
+- Unannounced roadmap commitments or private commercial terms.
+- Third-party service uptime, pricing, or feature availability.
+
+## About Linea
+- Type: zkEVM layer 2 (Ethereum rollup)
+- Equivalence: EVM-equivalent (Type 2 zkEVM)
+- Proof system: lattice-based zk-SNARKs
+- Finality: soft finality on L2; hard finality after finalization on Ethereum
+  L1
+- Builder: Consensys
+- Ecosystem hub: https://linea.build
+- Bridge: https://bridge.linea.build
+- Block explorer: https://lineascan.build
+- Status page: https://linea.statuspage.io
+- Lineth source: https://github.com/LFDT-Lineth/lineth-monorepo
+
+## Public network facts
+- Linea mainnet chain ID: 59144
+- Linea Sepolia testnet chain ID: 59141
+- Public RPC base URL: https://rpc.linea.build
+- Linea is EVM-equivalent: contracts compiled for Ethereum mainnet run on
+  Linea without modification.
+- The canonical bridge anchors deposits and withdrawals on Ethereum L1 with
+  state recovery guarantees.
+- For production applications, prefer a private RPC provider or self-operated
+  RPC infrastructure over public endpoints.
+
+## Protocol facts
+- Lineth uses zero-knowledge proofs to prove transaction batches to a
+  finalization layer.
+- The sequencer orders transactions and builds blocks.
+- The prover generates zero-knowledge proofs for state transitions.
+- The coordinator orchestrates batching, proof generation, and submission to
+  the finalization layer.
+- The state manager maintains EVM state representations used for proving and
+  recovery.
+- Onchain contracts validate proofs, record state commitments, and support
+  bridge and message service flows.
+
+## Stack and operator facts
+- Lineth can be used to operate Ethereum-compatible L2 or L3 networks.
+- Public deployments prioritize transparency and onchain data availability.
+- Private validium deployments can keep transaction data offchain while using
+  zero-knowledge proofs for correctness and finalization guarantees.
+- Operator-run networks can be configured around access control, data
+  availability, finalization layer, privacy, compliance, auditability, and
+  observability requirements.
+- The stack documentation is the primary route for institutions, enterprises,
+  network operators, and financial market infrastructure teams evaluating
+  Lineth as configurable blockchain infrastructure.
+
+## Start here
+- [Linea Docs](https://docs.linea.build/index.md)
+
+## Network
+- [Linea Mainnet](https://docs.linea.build/network.md): Overview of Linea Mainnet, the public zkEVM L2 network built on Lineth, with quick links to start building.
+- [Build on Linea](https://docs.linea.build/network/build.md): Link to essential builder support information.
+- [Block explorers](https://docs.linea.build/network/build/block-explorers.md): Block explorers available for Linea Mainnet and Linea Sepolia.
+- [Bridge](https://docs.linea.build/network/build/bridge.md): Access the canonical token bridge
+- [Connect](https://docs.linea.build/network/build/connect.md): Learn how to connect to rpc providers Linea Mainnet and Linea Sepolia and learn how to connect wallets to Linea.
+- [Contracts](https://docs.linea.build/network/build/contracts.md): Important contracts on Linea Mainnet and Linea Sepolia.
+- [Get testnet ETH](https://docs.linea.build/network/build/get-testnet-eth.md): Learn how to get testnet ETH for Linea Sepolia.
+- [Launch an app](https://docs.linea.build/network/build/launch-an-app.md): Guidance for deploying, publishing, and promoting your app on Linea.
+- [Build your app](https://docs.linea.build/network/build/launch-an-app/app.md): Build and deploy a frontend app to interact with your contract
+- [Get support](https://docs.linea.build/network/build/launch-an-app/dapp-support.md): Find out what support is available to help your project grow.
+- [Deploy your contract](https://docs.linea.build/network/build/launch-an-app/deploy.md): Create a new project and deploy and verify your contracts using Foundry
+- [Publish an event](https://docs.linea.build/network/build/launch-an-app/events.md): How to create an event for your Linea Hub app, using the Linea Developer Hub
+- [Get featured](https://docs.linea.build/network/build/launch-an-app/get-featured.md): Nominate your app for featured placement on the Linea Hub and amplification on X through the Developer Hub.
+- [Publish your app](https://docs.linea.build/network/build/launch-an-app/hub.md): A guide to listing your app on the Linea hub, and tips for optimizing your listing
+- [Understand reviews](https://docs.linea.build/network/build/launch-an-app/hub-reviews.md): A guide to how reviews work on the Linea Hub
+- [Messaging](https://docs.linea.build/network/build/send-receive-messages.md): Technical reference for the canonical message service
+- [Tools](https://docs.linea.build/network/build/tools.md): Discover tools and services to help you build on Linea.
+- [Account abstraction](https://docs.linea.build/network/build/tools/account-abstraction.md): Account abstraction is a broad category of fast-moving development in the Ethereum ecosystem. It
+- [Biconomy](https://docs.linea.build/network/build/tools/account-abstraction/biconomy.md): The Biconomy SDK provides solutions for decentralized applications (dapps) that streamline and
+- [Etherspot](https://docs.linea.build/network/build/tools/account-abstraction/etherspot.md): Robust ERC4337 infrastructure for seamless web3 development
+- [MetaMask](https://docs.linea.build/network/build/tools/account-abstraction/metamask.md): Learn more MetaMask Smart Accounts
+- [Noves](https://docs.linea.build/network/build/tools/account-abstraction/noves.md): Noves provides advanced data capabilities for ERC-4337, both at the pre-sign level and for retrieval
+- [OKLink](https://docs.linea.build/network/build/tools/account-abstraction/oklink.md): OKLink is a one-stop blockchain data platform covering a wide range of
+- [Openfort](https://docs.linea.build/network/build/tools/account-abstraction/openfort.md): Flexible account abstraction infrastructure
+- [Particle Network](https://docs.linea.build/network/build/tools/account-abstraction/particle-network.md): Smart Wallet-as-a-Service
+- [Pimlico](https://docs.linea.build/network/build/tools/account-abstraction/pimlico.md): Pimlico provides smart account tools for ERC-4337 that streamline development.
+- [thirdweb SDK](https://docs.linea.build/network/build/tools/account-abstraction/smartwallets.md): thirdweb's Smart Wallet SDK allows you to implement EIP-4337-compliant smart contract-enabled
+- [AI](https://docs.linea.build/network/build/tools/ai.md)
+- [Spheron network](https://docs.linea.build/network/build/tools/ai/spheron.md): Spheron Network is a decentralized compute provider and marketplace
+- [Analytics](https://docs.linea.build/network/build/tools/analytics.md)
+- [Cookie3](https://docs.linea.build/network/build/tools/analytics/cookie3.md): Cookie3 is like Google Analytics, but for web3. It allows you to
+- [Dune](https://docs.linea.build/network/build/tools/analytics/dune.md): Dune is crypto's data platform. Teams and individuals alike use Dune to explore,
+- [Mobula](https://docs.linea.build/network/build/tools/analytics/mobula.md): Mobula serves is a specialized data layer offering analytics
+- [Attestations](https://docs.linea.build/network/build/tools/attestations.md): An attestation is evidence or proof of something, issued by a given authority.
+- [Primus](https://docs.linea.build/network/build/tools/attestations/primus.md): Primus is a cryptography-based attestation protocol to bring all
+- [Verax](https://docs.linea.build/network/build/tools/attestations/verax.md): Verax is a shared onchain attestation registry. The teams that are actively involved in designing
+- [Contract templates](https://docs.linea.build/network/build/tools/contracts-templates.md)
+- [Cookbook.dev](https://docs.linea.build/network/build/tools/contracts-templates/cookbook.md): Cookbook.dev is an open-source smart contract registry
+- [thirdweb](https://docs.linea.build/network/build/tools/contracts-templates/thirdweb.md): thirdweb is a developer tools platform that speeds up and simplifies dapp development. On the
+- [Cross-chain tooling](https://docs.linea.build/network/build/tools/cross-chain.md)
+- [Arcana](https://docs.linea.build/network/build/tools/cross-chain/arcana.md): The Arcana Network Chain Abstraction (CA) SDK integrates with any web3 app and enables app users to beat liquidity fragmentation. Users can…
+- [Chainlink Cross-Chain Interoperability Protocol (CCIP)](https://docs.linea.build/network/build/tools/cross-chain/ccip.md): Chainlink CCIP is a blockchain interoperability protocol that enables developers to build secure
+- [CCIP Read](https://docs.linea.build/network/build/tools/cross-chain/ccip-read.md): Use a CCIP Read gateway to query data on Linea from L1
+- [LayerZero Omnichain Messaging](https://docs.linea.build/network/build/tools/cross-chain/layerzero.md): Omnichain interoperability protocol enabling secure cross-chain communication for Linea applications. Connect to 100+ blockchains, send mes…
+- [Reactive Network](https://docs.linea.build/network/build/tools/cross-chain/reactive-network.md): Learn how to use the Reactive Network to create reactive dApps
+- [Onthis Shortcuts](https://docs.linea.build/network/build/tools/cross-chain/shortcuts.md): No-code tool for executing multiple DeFi actions in one transaction
+- [Thirdweb Universal Bridge](https://docs.linea.build/network/build/tools/cross-chain/thirdweb.md): Learn how to use the Thirdweb Universal Bridge to enable onramps, swapping, and bridging on any EVM chain.
+- [Data indexers](https://docs.linea.build/network/build/tools/data-indexers.md)
+- [Alchemy](https://docs.linea.build/network/build/tools/data-indexers/alchemy.md): Alchemy Subgraphs is a blockchain indexing platform with drop-in support for
+- [bitsCrunch](https://docs.linea.build/network/build/tools/data-indexers/bitscrunch.md): bitsCrunch is an AI-enabled decentralized blockchain data network
+- [Codex](https://docs.linea.build/network/build/tools/data-indexers/codex.md): Real-time and historical token, price, holder, and trade data for Linea via GraphQL.
+- [Covalent](https://docs.linea.build/network/build/tools/data-indexers/covalent.md): GoldRush,
+- [Overview](https://docs.linea.build/network/build/tools/data-indexers/dipdup/overview.md): DipDup is a Python framework for building smart contract
+- [Quickstart](https://docs.linea.build/network/build/tools/data-indexers/dipdup/quickstart.md): This page will guide you through the steps to get your first DipDup indexer up
+- [Dune](https://docs.linea.build/network/build/tools/data-indexers/dune.md): Crypto's data platform
+- [Envio](https://docs.linea.build/network/build/tools/data-indexers/envio.md): Envio is a customizable, real-time indexing solution that
+- [Etherscan](https://docs.linea.build/network/build/tools/data-indexers/etherscan.md): Use one API key across multiple chains with the Etherscan API v2
+- [Quickstart - Index](https://docs.linea.build/network/build/tools/data-indexers/goldsky/goldsky-index.md): To get started with Goldsky Index:
+- [Quickstart - Mirror](https://docs.linea.build/network/build/tools/data-indexers/goldsky/goldsky-mirror.md): To get started with Goldsky Mirror:
+- [Overview](https://docs.linea.build/network/build/tools/data-indexers/goldsky/overview.md): Goldsky is a data indexing provider for Linea enabling
+- [Mobula](https://docs.linea.build/network/build/tools/data-indexers/mobula.md): Mobula is a specialized data layer that offers
+- [Moralis](https://docs.linea.build/network/build/tools/data-indexers/moralis.md): Moralis
+- [NFTScan](https://docs.linea.build/network/build/tools/data-indexers/nftscan.md): The increasing demand for NFTs has brought attention to the importance of having
+- [Noves](https://docs.linea.build/network/build/tools/data-indexers/noves.md): Noves is a leading provider of interpreted, human-readable data in the EVM
+- [Reservoir](https://docs.linea.build/network/build/tools/data-indexers/reservoir.md): Reservoir is a developer platform that lets you
+- [Sentio](https://docs.linea.build/network/build/tools/data-indexers/sentio.md): Sentio is an integrated, hosted, and modern analytics, monitoring, alerting, and
+- [SubQuery](https://docs.linea.build/network/build/tools/data-indexers/subquery.md): Fast, flexible, universal, open source and decentralized APIs
+- [Subsquid](https://docs.linea.build/network/build/tools/data-indexers/subsquid.md): Subsquid is a decentralized indexing toolkit optimized
+- [The Graph Network](https://docs.linea.build/network/build/tools/data-indexers/thegraph.md): Getting historical data on smart contracts can be frustrating when building a
+- [Gas](https://docs.linea.build/network/build/tools/gas.md)
+- [Blocknative](https://docs.linea.build/network/build/tools/gas/blocknative.md): Blocknative offers APIs to help developers and users estimate fees on Linea. The estimates are based
+- [Libraries](https://docs.linea.build/network/build/tools/libraries.md)
+- [ethereum-lists/chains](https://docs.linea.build/network/build/tools/libraries/ethereum-list.md): Linea Mainnet and Linea Sepolia are listed on the official
+- [Ethers.js](https://docs.linea.build/network/build/tools/libraries/ethers-js.md): The ethers.js library aims to be a complete and compact library for interacting
+- [MulticallV3](https://docs.linea.build/network/build/tools/libraries/multicall.md): Multicall aggregates results from multiple contract constant function calls.
+- [Reown](https://docs.linea.build/network/build/tools/libraries/reown.md): Use the Reown protocol to enable users from a multitude of wallets to log into decentralized
+- [Viem](https://docs.linea.build/network/build/tools/libraries/viem.md): Viem offers a TypeScript interface for Ethereum that provides low-level
+- [Wagmi](https://docs.linea.build/network/build/tools/libraries/wagmi.md): Wagmi is a collection of React hooks containing everything you need to start
+- [Web3j](https://docs.linea.build/network/build/tools/libraries/web3j.md): A web3 Java library that supports Linea-specific RPC methods.
+- [Node providers](https://docs.linea.build/network/build/tools/node-providers.md): Private RPC endpoints
+- [eRPC](https://docs.linea.build/network/build/tools/node-providers/erpc.md): eRPC is a fault-tolerant EVM RPC proxy and re-org aware
+- [Oracles](https://docs.linea.build/network/build/tools/oracles.md)
+- [API3](https://docs.linea.build/network/build/tools/oracles/api3.md): API3 is a collaborative project to deliver traditional API
+- [Chainlink](https://docs.linea.build/network/build/tools/oracles/chainlink.md): Chainlink is the industry standard for building, accessing, and selling oracle
+- [DIA](https://docs.linea.build/network/build/tools/oracles/dia.md): Overview
+- [ORA](https://docs.linea.build/network/build/tools/oracles/ora.md): ORA is a verifiable oracle protocol that brings AI and complex
+- [Pyth Network](https://docs.linea.build/network/build/tools/oracles/pyth.md): Pyth Network is an oracle that publishes financial market data to multiple
+- [RedStone](https://docs.linea.build/network/build/tools/oracles/redstone.md): RedStone provides data feeds with update times of less than 10 seconds, suitable
+- [Supra](https://docs.linea.build/network/build/tools/oracles/supra.md): Supra is a novel, high-throughput oracle and
+- [Tellor](https://docs.linea.build/network/build/tools/oracles/tellor.md): A versatile oracle protocol that can provide data of any type permissionlessly with crypto-economic liveness and security.
+- [Security](https://docs.linea.build/network/build/tools/privacy.md)
+- [Secret Network](https://docs.linea.build/network/build/tools/privacy/secret.md): Decentralized confidential computing
+- [Security](https://docs.linea.build/network/build/tools/security.md): This page presents a selection of third-party security tools that work on Linea and that
+- [GoPlus Security API](https://docs.linea.build/network/build/tools/security/goplus-security-api.md): GoPlus Security provides open, permissionless, user-driven security
+- [Hexagate](https://docs.linea.build/network/build/tools/security/hexagate.md): Hexagate is a proactive web3 security and risk analytics solution.
+- [Hypernative](https://docs.linea.build/network/build/tools/security/hypernative.md): Hypernative stops zero-day cyber attacks, economic risks, detects
+- [Scamfari](https://docs.linea.build/network/build/tools/security/scamfari.md): Scamfari is a cybersecurity tool developed on the Linea blockchain, enabling
+- [Social login](https://docs.linea.build/network/build/tools/social-login.md)
+- [Dynamic](https://docs.linea.build/network/build/tools/social-login/dynamic.md): Social sign-in authentication that combines web2 familiarity with web3 functionality
+- [MetaMask Embedded Wallets](https://docs.linea.build/network/build/tools/social-login/metamask.md): One-click, OAuth & Web3-native onboarding to the Linea ecosystem
+- [Openfort](https://docs.linea.build/network/build/tools/social-login/openfort.md): Open-source wallet solution with flexible authentication provider options
+- [Privy](https://docs.linea.build/network/build/tools/social-login/privy.md): Social login authentication with embedded wallets and flexible OAuth configuration options
+- [Bridge tokens to Linea](https://docs.linea.build/network/how-to/bridge.md): The Linea bridge app provides multiple ways to
+- [Connect a wallet to your dapp](https://docs.linea.build/network/how-to/connect-wallet.md): Learn how to connect a wallet to your dapp so users can interact with your contracts
+- [Deploy a smart contract](https://docs.linea.build/network/how-to/deploy-smart-contract.md): Deploy a contract to Linea using a variety of libraries.
+- [Atlas](https://docs.linea.build/network/how-to/deploy-smart-contract/atlas.md): Deploy a smart contract using Atlas.
+- [Cookbook.dev](https://docs.linea.build/network/how-to/deploy-smart-contract/cookbook.md): Deploy a smart contract using Cookbook.dev.
+- [Foundry](https://docs.linea.build/network/how-to/deploy-smart-contract/foundry.md): Deploy a smart contract using Foundry.
+- [Hardhat](https://docs.linea.build/network/how-to/deploy-smart-contract/hardhat.md): Deploy a smart contract using Hardhat.
+- [Remix](https://docs.linea.build/network/how-to/deploy-smart-contract/remix.md): Deploy a smart contract using Remix.
+- [thirdweb](https://docs.linea.build/network/how-to/deploy-smart-contract/thirdweb.md): Deploy a smart contract using thirdweb.
+- [Deploy a Linea subdomain](https://docs.linea.build/network/how-to/deploy-subdomain.md): Guide to deploy a subdomain for any L1 .eth domain on Linea
+- [Add a fallback for RPC requests](https://docs.linea.build/network/how-to/fallback.md): Use Wagmi's `fallback` Transport in your app for contingency in case one RPC endpoint fails.
+- [Estimate gas costs](https://docs.linea.build/network/how-to/gas-fees.md): How to estimate gas costs on Linea
+- [Migrate a dapp to Linea](https://docs.linea.build/network/how-to/migrate-dapp.md): An overview of the steps to move a dapp from an EVM-compatible chain to Linea.
+- [Recover state](https://docs.linea.build/network/how-to/recover-state.md): How to reconstruct Linea's state as it was at a given block number.
+- [Run a Linea node](https://docs.linea.build/network/how-to/run-a-node.md): Linea follows Ethereum’s dual-layer design. Every Linea node runs:
+- [Besu](https://docs.linea.build/network/how-to/run-a-node/besu.md): Install the Besu client to run a Linea node.
+- [Network upgrades](https://docs.linea.build/network/how-to/run-a-node/beta-v4-migration.md): Detailed walkthroughs and how-tos for upgrading your Linea node to the latest hard fork or other upgrade
+- [Bootnodes](https://docs.linea.build/network/how-to/run-a-node/bootnodes.md): Bootnodes available for Linea Mainnet
+- [Erigon](https://docs.linea.build/network/how-to/run-a-node/erigon.md): Install the Erigon client to run a Linea node.
+- [Geth](https://docs.linea.build/network/how-to/run-a-node/geth.md): Install the Geth client to run a Linea node.
+- [Linea Besu](https://docs.linea.build/network/how-to/run-a-node/linea-besu.md): Install the Besu client to run a Linea node.
+- [Maru](https://docs.linea.build/network/how-to/run-a-node/maru.md): How to run Linea's consensus layer client, Maru.
+- [Verify a smart contract](https://docs.linea.build/network/how-to/verify-smart-contract.md): Verify a contract on Linea using a variety of libraries.
+- [Atlas](https://docs.linea.build/network/how-to/verify-smart-contract/atlas.md): Your contracts verify automatically on Atlas 😊
+- [Foundry](https://docs.linea.build/network/how-to/verify-smart-contract/foundry.md): To verify your Foundry contracts, you can use Foundry's verify-contract
+- [Hardhat](https://docs.linea.build/network/how-to/verify-smart-contract/hardhat.md): To verify your Hardhat contracts, use Hardhat's Etherscan plugin to verify contracts on Lineascan.
+- [Verify users with Proof of Humanity](https://docs.linea.build/network/how-to/verify-users-with-proof-of-humanity.md): Use Linea Proof of Humanity to verify and check the authenticity of your users.
+- [Write and deploy assertions](https://docs.linea.build/network/how-to/write-and-deploy-assertions.md): A guide to developing Credible Layer assertions
+- [Ethereum differences](https://docs.linea.build/network/overview/ethereum-differences.md): Learn about the key differences between Ethereum and Linea.
+- [Predictable pricing](https://docs.linea.build/network/overview/predictable-pricing.md): Understand how transaction pricing works on Linea
+- [Public data](https://docs.linea.build/network/overview/public-data.md): How Linea Mainnet and Linea Sepolia presents data to the public.
+- [State recovery](https://docs.linea.build/network/overview/recoverable-state.md): Linea's state can be recovered from a given block number.
+- [Tokenomics](https://docs.linea.build/network/overview/tokenomics.md): The utility, distribution, and numbers behind the token, LINEA.
+- [Transaction finality](https://docs.linea.build/network/overview/transaction-finality.md): How Linea transactions progress from soft to hard finality, what that means for developers and users, and how to check finality programmati…
+- [Yield Boost](https://docs.linea.build/network/overview/yield-boost.md): How Linea stakes surplus bridged ETH and what that means for users.
+- [Architecture](https://docs.linea.build/network/overview/yield-boost/architecture.md): ETH fund flow and role permissions in the Linea Yield Boost staking system.
+- [Risk disclosures](https://docs.linea.build/network/overview/yield-boost/risk-disclosures.md): Risks relating to Linea Bridge Yield Boost
+- [Risk disclosures](https://docs.linea.build/network/risk-disclosures.md): Risk disclosures
+- [Build an AI agent](https://docs.linea.build/network/tutorials/aiagent-quickstart.md): A quickstart guide to building a simple AI agent on Linea.
+- [Ecosystem tutorials](https://docs.linea.build/network/tutorials/ecosystem-tutorials.md): Curated community and ecosystem tutorials.
+- [Transfer USDC on Linea](https://docs.linea.build/network/tutorials/ecosystem-tutorials/usdc.md): Build a simple dapp to transfer USDC on Linea.
+- [Upgrade your EOA to a smart account](https://docs.linea.build/network/tutorials/eip-7702.md): A step-by-step guide to upgrade your EOA to a smart account.
+- [Build your first dapp on Linea](https://docs.linea.build/network/tutorials/first-dapp.md): A step-by-step guide to building your first dapp on Linea.
+- [Build a marketplace dapp](https://docs.linea.build/network/tutorials/marketplace-dapp.md): A step-by-step guide to building a simple marketplace dapp on Linea.
+- [Build a voting dapp](https://docs.linea.build/network/tutorials/voting-dapp.md): A step-by-step guide to building a simple voting dapp on Linea.
+
+## Protocol
+- [Protocol](https://docs.linea.build/protocol.md): Learn more about the Lineth protocol, including the components that make up its architecture, and how it processes transactions, generates…
+- [Architecture](https://docs.linea.build/protocol/architecture.md): Protocol architecture overview and core components of Lineth
+- [Coordinator](https://docs.linea.build/protocol/architecture/coordinator.md): How the Lineth Coordinator orchestrates batching, proof generation, and finality submission.
+- [Conflation](https://docs.linea.build/protocol/architecture/coordinator/conflation.md): How conflation in Lineth combines blocks into proof-sized data sets for efficient proving.
+- [Interoperability](https://docs.linea.build/protocol/architecture/interoperability.md): Cross-chain messaging and canonical token bridging between a Lineth network and its finalization layer.
+- [Canonical message service](https://docs.linea.build/protocol/architecture/interoperability/canonical-message-service.md): How Lineth's canonical message service passes arbitrary messages between networks.
+- [Canonical token bridge](https://docs.linea.build/protocol/architecture/interoperability/canonical-token-bridge.md): How Lineth's canonical token bridge uses lock-and-mint contracts and the message service for ERC-20 transfers.
+- [Prover](https://docs.linea.build/protocol/architecture/prover.md): How the Lineth prover turns execution traces into zero-knowledge proofs.
+- [Module limits](https://docs.linea.build/protocol/architecture/prover/prover-limits.md): How module limits ensure the prover can generate proofs.
+- [Proving: Circuit execution and runtime](https://docs.linea.build/protocol/architecture/prover/proving.md): How gnark builds circuits and generates zk-SNARK proofs for Lineth state transitions.
+- [RISC-V proving architecture](https://docs.linea.build/protocol/architecture/prover/risc-v-overview.md): How RISC-V can support guest-program-based proving in Lineth.
+- [Proving: Circuit building](https://docs.linea.build/protocol/architecture/prover/trace-expansion.md): How Corset builds constraint systems and expands traces for the Lineth proving pipeline.
+- [Trusted setup](https://docs.linea.build/protocol/architecture/prover/trusted-setup.md): The public MPC ceremonies and structured reference strings used by the Lineth proving system.
+- [RPC services](https://docs.linea.build/protocol/architecture/rpc-services.md): JSON-RPC services exposed by Lineth nodes, enabling access to near-head state and full historical blockchain data.
+- [Sequencer](https://docs.linea.build/protocol/architecture/sequencer.md): How the Lineth Sequencer orders transactions, builds blocks, and prepares execution traces for proving.
+- [Tracer](https://docs.linea.build/protocol/architecture/sequencer/traces-generator.md): How the tracer works with the sequencer and prover
+- [Smart contracts](https://docs.linea.build/protocol/architecture/smart-contracts.md): The onchain system contracts Lineth deploys on the finalization layer and on the network.
+- [EVM state manager](https://docs.linea.build/protocol/architecture/state-manager.md): How the Lineth state manager tracks network state and proves state transitions.
+- [EIP-7702 support](https://docs.linea.build/protocol/eip-7702.md): EIP-7702 lets EOAs delegate to smart contract logic, persisting until revoked.
+- [Forced transactions](https://docs.linea.build/protocol/forced-transactions.md): Forced transactions on Linea.
+- [Submit forced transactions](https://docs.linea.build/protocol/how-to/forced-transactions.md): Submit forced transactions on Linea Public Mainnet.
+- [Linea and Lineth](https://docs.linea.build/protocol/linea-vs-lineth.md): How the public Linea network relates to Lineth, the open-source rollup stack that powers it.
+- [Source repositories](https://docs.linea.build/protocol/reference/repos.md): Source repositories for Lineth, Linea Mainnet components, and supporting libraries.
+- [Security audits](https://docs.linea.build/protocol/reference/security-audits.md): Find published security audits for Lineth protocol components and Linea Mainnet contracts.
+- [Glossary](https://docs.linea.build/protocol/reference/zero-knowledge-glossary.md): Definitions of Linea, Lineth, and zero-knowledge terms used across docs.linea.build.
+
+## Stack
+- [Lineth Stack](https://docs.linea.build/stack.md): Overview of Lineth for enterprise network operators
+- [Deployment architecture](https://docs.linea.build/stack/deployment.md): Apply Lineth components and design choices to an operator deployment
+- [Deployment components](https://docs.linea.build/stack/deployment/core-components.md): Required and optional components in a Lineth deployment footprint
+- [Data availability and finalization](https://docs.linea.build/stack/deployment/data-availability-finalization.md): Data availability and finalization-layer choices for Lineth deployments
+- [Multi-validator consensus](https://docs.linea.build/stack/deployment/distributed-sequencing.md): Maru multi-validator QBFT design, fault-tolerance scope, topology, and latency trade-offs for Lineth deployments
+- [Finality design](https://docs.linea.build/stack/deployment/fast-finality.md): Application-level and settlement finality choices for Lineth deployments
+- [High availability](https://docs.linea.build/stack/deployment/high-availability.md): Multi-region resilience patterns for Lineth enterprise deployments: consensus, RPC routing, and finalization failover
+- [Access control](https://docs.linea.build/stack/deployment/rbac.md): Operator-configured access policy for protected Lineth RPC, API, and tooling surfaces
+- [Evaluate Lineth](https://docs.linea.build/stack/evaluate.md): Capabilities and evidence paths for evaluating a Lineth deployment
+- [Compliance](https://docs.linea.build/stack/evaluate/compliance.md): Protocol evidence operators can use in a compliance program, and what Lineth does not claim
+- [Deployment models](https://docs.linea.build/stack/evaluate/deployment-models.md): How to compare Lineth public and private validium deployment models and their trade-offs
+- [Security and assurance](https://docs.linea.build/stack/evaluate/security.md): Protocol guarantees, operator controls, and assurance evidence for Lineth deployments
+- [Trust and responsibilities](https://docs.linea.build/stack/evaluate/trust-model.md): Trust assumptions, control responsibilities, and failure modes for Lineth deployments
+- [Privacy and data visibility](https://docs.linea.build/stack/evaluate/validium.md): Where Lineth deployment data is published, retained, visible, and verifiable
+- [Enable forced transactions](https://docs.linea.build/stack/how-to/enable-forced-transactions.md): Enable forced transactions on a Lineth deployment.
+- [Run a local Lineth Stack](https://docs.linea.build/stack/how-to/run-local-lineth-stack.md): Use the guided wizard to configure and start a local Lineth Stack L2 with L1 finality, settling to either a local L1 or Sepolia.
+- [Set up distributed sequencing](https://docs.linea.build/stack/how-to/set-up-distributed-sequencing.md): Run Maru in multi-validator mode with QBFT consensus on a Lineth chain.
+
+## Reference
+- [Linea Token API (0.1.0)](https://docs.linea.build/api/token-api/reference.md)
+- [Lineth SDK](https://docs.linea.build/api/linea-sdk.md): A viem-based TypeScript SDK for bridging ETH and tokens and for sending and claiming messages between Ethereum and Linea.
+- [IGenericErrors](https://docs.linea.build/api/linea-smart-contracts/interfaces/igenericerrors.md): ZeroAddressNotAllowed
+- [IMessageService](https://docs.linea.build/api/linea-smart-contracts/interfaces/imessageservice.md): MessageSent
+- [IPauseManager](https://docs.linea.build/api/linea-smart-contracts/interfaces/ipausemanager.md): PauseTypeRole
+- [IPermissionsManager](https://docs.linea.build/api/linea-smart-contracts/interfaces/ipermissionsmanager.md): RoleAddress
+- [IRateLimiter](https://docs.linea.build/api/linea-smart-contracts/interfaces/iratelimiter.md): RateLimitInitialized
+- [IL1MessageManager](https://docs.linea.build/api/linea-smart-contracts/interfaces/l1/il1messagemanager.md): RollingHashUpdated
+- [IL1MessageManagerV1](https://docs.linea.build/api/linea-smart-contracts/interfaces/l1/il1messagemanagerv1.md): MessageDoesNotExistOrHasAlreadyBeenClaimed
+- [IL1MessageService](https://docs.linea.build/api/linea-smart-contracts/interfaces/l1/il1messageservice.md): ClaimMessageWithProofParams
+- [ILineaRollup](https://docs.linea.build/api/linea-smart-contracts/interfaces/l1/ilinearollup.md): InitializationData
+- [IPlonkVerifier](https://docs.linea.build/api/linea-smart-contracts/interfaces/l1/iplonkverifier.md): Verify
+- [IZkEvmV2](https://docs.linea.build/api/linea-smart-contracts/interfaces/l1/izkevmv2.md): StartingRootHashDoesNotMatch
+- [IL2MessageManager](https://docs.linea.build/api/linea-smart-contracts/interfaces/l2/il2messagemanager.md): RollingHashUpdated
+- [IL2MessageManagerV1](https://docs.linea.build/api/linea-smart-contracts/interfaces/l2/il2messagemanagerv1.md): MinimumFeeChanged
+- [IL2MessageServiceV1](https://docs.linea.build/api/linea-smart-contracts/interfaces/l2/il2messageservicev1.md): setMinimumFee
+- [CallForwardingProxy](https://docs.linea.build/api/linea-smart-contracts/lib/callforwardingproxy.md): target
+- [L2MessageServicePauseManager](https://docs.linea.build/api/linea-smart-contracts/lib/l2messageservicepausemanager.md): PAUSEL1L2_ROLE
+- [LineaRollupPauseManager](https://docs.linea.build/api/linea-smart-contracts/lib/linearolluppausemanager.md): PAUSEL1L2_ROLE
+- [Mimc](https://docs.linea.build/api/linea-smart-contracts/lib/mimc.md): DataMissing
+- [PauseManager](https://docs.linea.build/api/linea-smart-contracts/lib/pausemanager.md): PAUSEALLROLE
+- [SparseMerkleProof](https://docs.linea.build/api/linea-smart-contracts/lib/sparsemerkleproof.md): Account
+- [TokenBridgePauseManager](https://docs.linea.build/api/linea-smart-contracts/lib/tokenbridgepausemanager.md): PAUSEINITIATETOKENBRIDGINGROLE
+- [Utils](https://docs.linea.build/api/linea-smart-contracts/lib/utils.md): _efficientKeccak
+- [LineaRollup](https://docs.linea.build/api/linea-smart-contracts/linearollup.md): CONTRACT_VERSION
+- [L1MessageManager](https://docs.linea.build/api/linea-smart-contracts/messageservice/l1/l1messagemanager.md): rollingHashes
+- [L1MessageService](https://docs.linea.build/api/linea-smart-contracts/messageservice/l1/l1messageservice.md): systemMigrationBlock
+- [L1MessageManagerV1](https://docs.linea.build/api/linea-smart-contracts/messageservice/l1/v1/l1messagemanagerv1.md): INBOXSTATUSUNKNOWN
+- [L1MessageServiceV1](https://docs.linea.build/api/linea-smart-contracts/messageservice/l1/v1/l1messageservicev1.md): nextMessageNumber
+- [L2MessageManager](https://docs.linea.build/api/linea-smart-contracts/messageservice/l2/l2messagemanager.md): L1L2MESSAGESETTERROLE
+- [L2MessageService](https://docs.linea.build/api/linea-smart-contracts/messageservice/l2/l2messageservice.md): CONTRACT_VERSION
+- [L2MessageManagerV1](https://docs.linea.build/api/linea-smart-contracts/messageservice/l2/v1/l2messagemanagerv1.md): INBOXSTATUSUNKNOWN
+- [L2MessageServiceV1](https://docs.linea.build/api/linea-smart-contracts/messageservice/l2/v1/l2messageservicev1.md): MINIMUMFEESETTER_ROLE
+- [MessageHashing](https://docs.linea.build/api/linea-smart-contracts/messageservice/lib/messagehashing.md): _hashMessage
+- [RateLimiter](https://docs.linea.build/api/linea-smart-contracts/messageservice/lib/ratelimiter.md): You can use this control numeric limits over a period using timestamp.
+- [SparseMerkleTreeVerifier](https://docs.linea.build/api/linea-smart-contracts/messageservice/lib/sparsemerkletreeverifier.md): SafeCastOverflowedUintDowncast
+- [TimeLock](https://docs.linea.build/api/linea-smart-contracts/messageservice/lib/timelock.md): This timelock contract will be the owner of all upgrades that gives users confidence and an ability to exit should they want to before an u…
+- [TransientStorageHelpers](https://docs.linea.build/api/linea-smart-contracts/messageservice/lib/transientstoragehelpers.md): tstoreUint256
+- [MessageServiceBase](https://docs.linea.build/api/linea-smart-contracts/messageservice/messageservicebase.md): messageService
+- [TokenBridge](https://docs.linea.build/api/linea-smart-contracts/tokenbridge.md): Contract to manage cross-chain ERC-20 bridging.
+- [BridgedToken](https://docs.linea.build/api/linea-smart-contracts/tokenbridge/bridgedtoken.md): ERC-20 token created when a native token is bridged to a target chain.
+- [ITokenBridge](https://docs.linea.build/api/linea-smart-contracts/tokenbridge/interfaces/itokenbridge.md): InitializationData
+- [ZkEvmV2](https://docs.linea.build/api/linea-smart-contracts/zkevmv2.md): MODULO_R
+- [RPC and API overview](https://docs.linea.build/api/quickstart.md): Explore Linea's JSON-RPC methods and Token API.
+- [Use the Linea API](https://docs.linea.build/api/reference.md): How to make calls to the Linea blockchain using the Linea JSON-RPC APIs
+- [debug_traceBlockByHash](https://docs.linea.build/api/reference/debug-traceblockbyhash.md): Replays every transaction in a Linea block, identified by hash, and returns structured traces.
+- [debug_traceBlockByNumber](https://docs.linea.build/api/reference/debug-traceblockbynumber.md): Replays every transaction in a Linea block, identified by number, and returns structured traces.
+- [debug_traceCall](https://docs.linea.build/api/reference/debug-tracecall.md): Simulates a call on Linea and returns a structured trace without broadcasting a transaction.
+- [debug_traceTransaction](https://docs.linea.build/api/reference/debug-tracetransaction.md): Replays a Linea transaction and returns an execution trace.
+- [eth_accounts](https://docs.linea.build/api/reference/eth-accounts.md): Returns a list of addresses owned by the connected node.
+- [eth_blockNumber](https://docs.linea.build/api/reference/eth-blocknumber.md): Returns the number of the most recent block on Linea.
+- [eth_call](https://docs.linea.build/api/reference/eth-call.md): Executes a read-only call on Linea without creating a transaction.
+- [eth_chainId](https://docs.linea.build/api/reference/eth-chainid.md): Returns the chain ID of the connected Linea network.
+- [eth_estimateGas](https://docs.linea.build/api/reference/eth-estimategas.md): Estimates the gas required to execute a transaction on Linea.
+- [eth_feeHistory](https://docs.linea.build/api/reference/eth-feehistory.md): Returns historical gas and priority fee data across a range of Linea blocks.
+- [eth_gasPrice](https://docs.linea.build/api/reference/eth-gasprice.md): Returns the current gas price on Linea, in wei.
+- [eth_getBalance](https://docs.linea.build/api/reference/eth-getbalance.md): Returns the ETH balance of an address on Linea.
+- [eth_getBlockByHash](https://docs.linea.build/api/reference/eth-getblockbyhash.md): Returns block information on Linea by block hash.
+- [eth_getBlockByNumber](https://docs.linea.build/api/reference/eth-getblockbynumber.md): Returns block information on Linea by block number.
+- [eth_getBlockReceipts](https://docs.linea.build/api/reference/eth-getblockreceipts.md): Returns all transaction receipts for a given block on Linea.
+- [eth_getBlockTransactionCountByHash](https://docs.linea.build/api/reference/eth-getblocktransactioncountbyhash.md): Returns the number of transactions in a Linea block, given the block hash.
+- [eth_getBlockTransactionCountByNumber](https://docs.linea.build/api/reference/eth-getblocktransactioncountbynumber.md): Returns the number of transactions in a Linea block, given the block number.
+- [eth_getCode](https://docs.linea.build/api/reference/eth-getcode.md): Returns the bytecode deployed at a contract address on Linea.
+- [eth_getFilterChanges](https://docs.linea.build/api/reference/eth-getfilterchanges.md): Polls a Linea filter for new data since the last poll.
+- [eth_getFilterLogs](https://docs.linea.build/api/reference/eth-getfilterlogs.md): Returns all logs matching a Linea filter's criteria since it was created.
+- [eth_getLogs](https://docs.linea.build/api/reference/eth-getlogs.md): Returns event logs on Linea matching a filter.
+- [eth_getProof](https://docs.linea.build/api/reference/eth-getproof.md): Returns the Merkle proof for an account and its requested storage slots on Linea.
+- [eth_getStorageAt](https://docs.linea.build/api/reference/eth-getstorageat.md): Returns the value stored at a given storage slot of a contract on Linea.
+- [eth_getTransactionByBlockHashAndIndex](https://docs.linea.build/api/reference/eth-gettransactionbyblockhashandindex.md): Returns a transaction on Linea by block hash and transaction index.
+- [eth_getTransactionByBlockNumberAndIndex](https://docs.linea.build/api/reference/eth-gettransactionbyblocknumberandindex.md): Returns a transaction on Linea by block number and transaction index.
+- [eth_getTransactionByHash](https://docs.linea.build/api/reference/eth-gettransactionbyhash.md): Returns transaction data for a given transaction hash on Linea.
+- [eth_getTransactionCount](https://docs.linea.build/api/reference/eth-gettransactioncount.md): Returns the number of transactions sent from an address (the account nonce) on Linea.
+- [eth_getTransactionReceipt](https://docs.linea.build/api/reference/eth-gettransactionreceipt.md): Returns the receipt of a transaction on Linea, including logs and status.
+- [eth_maxPriorityFeePerGas](https://docs.linea.build/api/reference/eth-maxpriorityfeepergas.md): Returns the current priority fee per gas on Linea, in wei.
+- [eth_newBlockFilter](https://docs.linea.build/api/reference/eth-newblockfilter.md): Creates a filter to receive notifications when new Linea blocks arrive.
+- [eth_newFilter](https://docs.linea.build/api/reference/eth-newfilter.md): Creates a log filter on Linea and returns a filter ID for polling.
+- [eth_sendBundle](https://docs.linea.build/api/reference/eth-sendbundle.md): Send a bundle of signed transactions to be executed atomically.
+- [eth_sendRawTransaction](https://docs.linea.build/api/reference/eth-sendrawtransaction.md): Simulate transaction submission to help prevent failed transactions.
+- [eth_uninstallFilter](https://docs.linea.build/api/reference/eth-uninstallfilter.md): Removes a filter from the Linea RPC node.
+- [linea_estimateGas](https://docs.linea.build/api/reference/linea-estimategas.md): Estimates the gas limit, base fee, and priority fee for a Linea transaction using Linea's predictable pricing model.
+- [linea_getProof](https://docs.linea.build/api/reference/linea-getproof.md): Returns the account and storage values with Merkle proofs for a finalized L2 block on Linea.
+- [linea_getTransactionExclusionStatusV1](https://docs.linea.build/api/reference/linea-gettransactionexclusionstatusv1.md): Checks whether a transaction was rejected by the Linea sequencer, RPC, or P2P node for exceeding data line limits.
+- [trace_block](https://docs.linea.build/api/reference/trace-block.md): Returns OpenEthereum-style traces for every transaction in a Linea block.
+- [trace_call](https://docs.linea.build/api/reference/trace-call.md): Simulates a call on Linea and returns OpenEthereum-style traces.
+- [trace_transaction](https://docs.linea.build/api/reference/trace-transaction.md): Returns OpenEthereum-style traces for a Linea transaction.
+- [Token API](https://docs.linea.build/api/token-api.md): The Token API provides comprehensive programmatic access to token data on the Linea network. This
+- [Reference](https://docs.linea.build/reference.md): Reference documentation for Linea RPC APIs, SDKs, component configuration, and smart contracts.
+- [Linea Besu plugin configuration reference](https://docs.linea.build/reference/component-configuration/linea-besu-plugin-options.md): CLI configuration options for the Linea Besu sequencer, tracer, and state recovery plugins.
+- [Coordinator configuration reference](https://docs.linea.build/reference/component-configuration/linea-coordinator-options.md): TOML configuration options for the Coordinator, grouped by config file and section.
+- [Maru configuration reference](https://docs.linea.build/reference/component-configuration/linea-maru-options.md): TOML configuration options for Maru, grouped by section.
+- [Postman configuration reference](https://docs.linea.build/reference/component-configuration/linea-postman-options.md): Environment variable configuration for the Postman, grouped by section.
+- [Prover configuration reference](https://docs.linea.build/reference/component-configuration/linea-prover-options.md): TOML configuration options for the Prover, grouped by section.
+
+## Changelog and risk
+- [Release notes](https://docs.linea.build/changelog/release-notes.md): Find out all you need to know about the latest Linea versions.
+- [Linea Security Council transaction record](https://docs.linea.build/changelog/security-council-record.md): A record of recent Linea Security Council transactions, provided for transparency.
+
+## Other documentation
+- [Linea Support](https://docs.linea.build/support.md)
