@@ -31,6 +31,14 @@ tags:
   - zkEVM
   - EVM Equivalence
   - JSON-RPC
+  - ConsenSys
+tags_raw:
+  - Blockchain
+  - Layer 2
+  - Ethereum
+  - zkEVM
+  - EVM Equivalence
+  - JSON-RPC
   - Consensys
 created: '2026-05-23'
 modified: '2026-05-23'
@@ -188,6 +196,10 @@ apis:
     humanURL: https://linea.build/apps
     baseURL: https://linea.build/apps
     tags:
+      - Ecosystem
+      - Directory
+      - DApps
+    tags_raw:
       - Ecosystem
       - Directory
       - dApps
