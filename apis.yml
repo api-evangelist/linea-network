@@ -11,6 +11,18 @@ description: >-
   extensions (linea_estimateGas, linea_getProof), the Linea SDK, the canonical
   Linea Bridge, Lineascan block explorer, the Linea POH/attestation system, and
   a published Linea Stack for deploying Linea-equivalent chains.
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: unknown
