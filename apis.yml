@@ -43,7 +43,7 @@ tags:
   - zkEVM
   - EVM Equivalence
   - JSON-RPC
-  - ConsenSys
+  - Consensys
 tags_raw:
   - Blockchain
   - Layer 2
@@ -210,7 +210,7 @@ apis:
     tags:
       - Ecosystem
       - Directory
-      - DApps
+      - dApps
     tags_raw:
       - Ecosystem
       - Directory
